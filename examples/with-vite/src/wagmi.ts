@@ -10,7 +10,7 @@ const appName = "My Dapp";
 const connectors = connectorsForWallets(
   [
     {
-      groupName: "Cosmos wallets",
+      groupName: "Recommended",
       wallets: [keplrWallet],
     },
   ],
