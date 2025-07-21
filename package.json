@@ -1,0 +1,12 @@
+{
+  "name": "keplr-rainbow-connector-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -Apt run build",
+    "clean": "yarn workspaces foreach -Apt run clean"
+  }
+}
