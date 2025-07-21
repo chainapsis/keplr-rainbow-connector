@@ -15,7 +15,7 @@
     "lint-test": "npx eslint \"src/**/*\" && npx prettier --check \"src/**/*\"",
     "lint-fix": "npx eslint --fix \"src/**/*\" && npx prettier --write \"src/**/*\""
   },
-  "dependencies": {
+  "peerDependencies": {
     "@rainbow-me/rainbowkit": "^2",
     "wagmi": "^2"
   },

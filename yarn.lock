@@ -571,8 +571,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@keplr-wallet/rainbow-connector@workspace:packages/rainbow-connector"
   dependencies:
-    "@rainbow-me/rainbowkit": ^2
     typescript: ^5.8.3
+  peerDependencies:
+    "@rainbow-me/rainbowkit": ^2
     wagmi: ^2
   languageName: unknown
   linkType: soft
@@ -960,7 +961,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rainbow-me/rainbowkit@npm:^2, @rainbow-me/rainbowkit@npm:^2.2.8":
+"@rainbow-me/rainbowkit@npm:^2.2.8":
   version: 2.2.8
   resolution: "@rainbow-me/rainbowkit@npm:2.2.8"
   dependencies:
@@ -5159,7 +5160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wagmi@npm:^2, wagmi@npm:^2.15.6":
+"wagmi@npm:^2.15.6":
   version: 2.16.0
   resolution: "wagmi@npm:2.16.0"
   dependencies:

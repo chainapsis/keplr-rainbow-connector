@@ -44,6 +44,6 @@ function createInjectedConnector(provider?: any): CreateConnector {
 }
 
 export function createKeplrConnector() {
-  const provider = getInjectedKeplr();
-  return createInjectedConnector(provider);
+  const ethereumProvider = getInjectedKeplr()?.ethereum;
+  return createInjectedConnector(ethereumProvider);
 }
