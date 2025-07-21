@@ -1,6 +1,6 @@
 import { createConnector } from "wagmi";
 import { injected } from "wagmi/connectors";
-import {
+import type {
   CreateConnector,
   WalletDetailsParams,
 } from "@rainbow-me/rainbowkit/dist/wallets/Wallet";
