@@ -16,9 +16,9 @@
     "lint-fix": "npx eslint --fix \"src/**/*\" && npx prettier --write \"src/**/*\""
   },
   "dependencies": {
-    "@rainbow-me/rainbowkit": "^2.2.8",
+    "@rainbow-me/rainbowkit": "^2",
     "detect-browser": "^5.3.0",
-    "wagmi": "^2.15.7"
+    "wagmi": "^2"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
