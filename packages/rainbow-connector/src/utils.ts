@@ -6,18 +6,6 @@ import type {
 } from "@rainbow-me/rainbowkit/dist/wallets/Wallet";
 
 export function getInjectedKeplr() {
-  if (typeof window === "undefined") {
-    return undefined;
-  }
-
-  if (window.keplr) {
-    return window.keplr;
-  }
-
-  if (document.readyState === "complete") {
-    return window.keplr;
-  }
-
   return window.keplr;
 }
 
@@ -35,7 +23,7 @@ function createInjectedConnector(provider?: any): CreateConnector {
         }
       : {};
 
-    return createConnector((config) => ({
+    return createConnector((config: any) => ({
       // Spread the injectedConfig object, which may be empty or contain the target function
       ...injected(injectedConfig)(config),
       ...walletDetails,
