@@ -577,6 +577,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@keplr-wallet/types@npm:^0.12.252":
+  version: 0.12.252
+  resolution: "@keplr-wallet/types@npm:0.12.252"
+  dependencies:
+    long: ^4.0.0
+  peerDependencies:
+    starknet: ^7
+  checksum: 07f4c9c986131ba2740d23a4d4a264a5205c6f5aa8e0ab641a095ac675c276504e7c4dd6a87c712aaab9e34188dd56dfd09572dd90ee659e17148f5dcd6387f1
+  languageName: node
+  linkType: hard
+
 "@lit-labs/ssr-dom-shim@npm:^1.4.0":
   version: 1.4.0
   resolution: "@lit-labs/ssr-dom-shim@npm:1.4.0"
@@ -3448,6 +3459,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"long@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "long@npm:4.0.0"
+  checksum: 16afbe8f749c7c849db1f4de4e2e6a31ac6e617cead3bdc4f9605cb703cd20e1e9fc1a7baba674ffcca57d660a6e5b53a9e236d7b25a295d3855cca79cc06744
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0, lru-cache@npm:^10.4.3":
   version: 10.4.3
   resolution: "lru-cache@npm:10.4.3"
@@ -5240,6 +5258,7 @@ __metadata:
   resolution: "with-vite@workspace:examples/with-vite"
   dependencies:
     "@keplr-wallet/rainbow-connector": 0.1.0
+    "@keplr-wallet/types": ^0.12.252
     "@rainbow-me/rainbowkit": ^2.2.8
     "@tanstack/react-query": ^5.55.3
     "@types/react": ^19.1.8

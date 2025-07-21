@@ -1,6 +1,17 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { getKeplrFromWindow } from "./utils";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [isKeplrInjected, setIsKeplrInjected] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const keplr = await getKeplrFromWindow();
+      setIsKeplrInjected(!!keplr);
+    })();
+  }, []);
+
   return (
     <div
       style={{
@@ -11,7 +22,7 @@ function App() {
         alignItems: "center",
       }}
     >
-      {Object.hasOwn(window, "keplr") ? "Keplr Injected" : "Keplr Not Injected"}
+      {isKeplrInjected ? "Keplr Injected" : "Keplr Not Injected"}
       <ConnectButton />
     </div>
   );
