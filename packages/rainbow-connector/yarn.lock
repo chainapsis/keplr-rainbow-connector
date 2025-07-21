@@ -128,11 +128,6 @@ __metadata:
     typescript: ^5.8.3
     viem: 2.29.2
     wagmi: ^2.15.7
-  peerDependencies:
-    "@tanstack/react-query": ^5.0.0
-    react: ">=18"
-    react-dom: ">=18"
-    viem: ^2.0.0
   languageName: unknown
   linkType: soft
 
