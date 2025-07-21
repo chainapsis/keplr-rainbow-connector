@@ -5,49 +5,20 @@ import type {
   WalletDetailsParams,
 } from "@rainbow-me/rainbowkit/dist/wallets/Wallet";
 
-export function hasInjectedKeplr() {
+export function getInjectedKeplr() {
   if (typeof window === "undefined") {
-    return false;
+    return undefined;
   }
 
   if (window.keplr) {
-    return !!window.keplr;
+    return window.keplr;
   }
 
   if (document.readyState === "complete") {
-    return !!window.keplr;
+    return window.keplr;
   }
-}
 
-import {
-  detect,
-  BrowserInfo,
-  BotInfo,
-  NodeInfo,
-  SearchBotDeviceInfo,
-  ReactNativeInfo,
-} from "detect-browser";
-
-function detectEnv(
-  userAgent?: string
-):
-  | BrowserInfo
-  | BotInfo
-  | NodeInfo
-  | SearchBotDeviceInfo
-  | ReactNativeInfo
-  | null {
-  return detect(userAgent);
-}
-
-function detectOS() {
-  const env = detectEnv();
-  return env && env.os ? env.os : undefined;
-}
-
-export function isAndroid(): boolean {
-  const os = detectOS();
-  return os ? os.toLowerCase().includes("android") : false;
+  return window.keplr;
 }
 
 // https://github.com/rainbow-me/rainbowkit/blob/32c67201570efb959446485d18bbc106589f9909/packages/rainbowkit/src/wallets/getInjectedConnector.ts#L82
@@ -72,6 +43,7 @@ function createInjectedConnector(provider?: any): CreateConnector {
   };
 }
 
-export const keplrConnector = createInjectedConnector(
-  typeof window !== "undefined" ? window.keplr : undefined
-);
+export function createKeplrConnector() {
+  const provider = getInjectedKeplr();
+  return createInjectedConnector(provider);
+}
