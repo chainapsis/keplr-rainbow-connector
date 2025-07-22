@@ -1,0 +1,40 @@
+name: Publish rainbow-connector to npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Enable Corepack (ensures correct Yarn version)
+        run: corepack enable
+
+      - name: Install dependencies (Yarn workspaces)
+        run: yarn install --immutable
+
+      - name: Build rainbow-connector workspace
+        run: yarn workspace @keplr-wallet/rainbow-connector run build
+
+      - name: Publish to npm
+        working-directory: packages/rainbow-connector
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+        run: npm publish --provenance --access public 
