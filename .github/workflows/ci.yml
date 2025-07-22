@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Enable Corepack (ensures correct Yarn version)
+        run: corepack enable
+
+      - name: Install dependencies (Yarn workspaces)
+        run: yarn install --immutable
+
+      - name: Build all workspaces
+        run: yarn build 
