@@ -23,7 +23,7 @@ pnpm add @keplr-wallet/rainbow-connector
 
 ## Quick Start
 
-Below is the minimal setup that replicates the code used in the **`examples/with-vite`** demo.
+Below is the minimal setup that replicates the code used in the [**`examples/with-vite`**](https://github.com/chainapsis/keplr-rainbow-connector/tree/main/examples/with-vite) demo.
 
 ```ts
 // wagmi.ts
