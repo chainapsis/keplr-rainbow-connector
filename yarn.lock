@@ -567,7 +567,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keplr-wallet/rainbow-connector@0.1.0-rc.2, @keplr-wallet/rainbow-connector@workspace:packages/rainbow-connector":
+"@keplr-wallet/rainbow-connector@0.1.0, @keplr-wallet/rainbow-connector@workspace:packages/rainbow-connector":
   version: 0.0.0-use.local
   resolution: "@keplr-wallet/rainbow-connector@workspace:packages/rainbow-connector"
   dependencies:
@@ -5258,7 +5258,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "with-vite@workspace:examples/with-vite"
   dependencies:
-    "@keplr-wallet/rainbow-connector": 0.1.0-rc.2
+    "@keplr-wallet/rainbow-connector": 0.1.0
     "@keplr-wallet/types": ^0.12.252
     "@rainbow-me/rainbowkit": ^2.2.8
     "@tanstack/react-query": ^5.55.3
