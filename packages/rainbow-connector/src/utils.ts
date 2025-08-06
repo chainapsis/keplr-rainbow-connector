@@ -6,6 +6,7 @@ import type {
 } from "@rainbow-me/rainbowkit/dist/wallets/Wallet";
 
 export function getInjectedKeplr() {
+  if (typeof window === "undefined") return;
   return window.keplr;
 }
 

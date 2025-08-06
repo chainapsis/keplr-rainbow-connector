@@ -2,6 +2,11 @@ import type { Wallet } from "@rainbow-me/rainbowkit";
 import { getInjectedKeplr, createKeplrConnector } from "./utils";
 import KeplrWalletLogo from "./assets/keplrWallet.svg";
 
+const keplrWalletLogoUrl =
+  typeof KeplrWalletLogo === "string"
+    ? KeplrWalletLogo
+    : (KeplrWalletLogo as { src: string }).src;
+
 export const keplrWallet = (): Wallet => {
   const keplr = getInjectedKeplr();
 
@@ -9,7 +14,7 @@ export const keplrWallet = (): Wallet => {
     id: "keplr",
     name: "Keplr",
     rdns: "app.keplr",
-    iconUrl: KeplrWalletLogo,
+    iconUrl: keplrWalletLogoUrl,
     iconBackground: "#000000",
     installed: !!keplr,
     downloadUrls: {
